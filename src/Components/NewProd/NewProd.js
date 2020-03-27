@@ -1,7 +1,10 @@
 import React from "react";
+import {Link, Redirect} from "react-router-dom";
 
 class NewProd extends React.Component {
     render() {
+        const redirect = this.props.redirect;
+        if (redirect) return <Redirect to="/" />
         return (
             <div>
                 <h1>Create product</h1>
@@ -17,6 +20,7 @@ class NewProd extends React.Component {
             <label htmlFor="color">Product Color: </label>
             <input id="color" type="text" name="color" value={this.props.newColor} onChange={this.props.handleInputChange} />
             <button type="submit" value="Submit">Add New Product</button>
+            <Link to={{ pathname: "/"}} ><button>Close</button></Link>
         </form>
         </div>
         )

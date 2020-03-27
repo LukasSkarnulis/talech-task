@@ -26,6 +26,10 @@ class App extends React.Component {
 };
 
 handleFormSubmit = (e) => {
+  if (!this.canBeSubmitted()) {
+    e.preventDefault();
+    return alert("Please fill all empty text spaces");
+  } 
   e.preventDefault();
   let products = [...this.state.products];
   products.push({
@@ -36,9 +40,9 @@ handleFormSubmit = (e) => {
       color: this.state.color,
       active: false,
   });
-  this.setState({ products, 
+  this.setState({ redirect: true, products, 
     name: "", ean: "", type: "", weight: "", color: "", active: false},
-    () => {this.setState({redirect: true})}
+    () => {this.setState({redirect: false})}
   );
 }
 handleEditFormSubmit = (index, e) => {
@@ -94,6 +98,7 @@ render() {
       setProductActive={this.setProductActive} />
       <Link to={{ pathname: "/create"}} ><button>Create</button></Link>
       <Route path="/create" render={(props) => <NewProd {...props} 
+      redirect = {this.state.redirect}
       handleFormSubmit={this.handleFormSubmit}
       handleInputChange={this.handleInputChange}
       newName={this.state.name}
@@ -110,7 +115,7 @@ render() {
       editType={this.state.type}
       editWeight={this.state.weight}
       editColor={this.state.color}
-      redirect={this.state.redirect} />} />
+  redirect={this.state.redirect} />} /> 
     </div>
     </BrowserRouter>
   );
