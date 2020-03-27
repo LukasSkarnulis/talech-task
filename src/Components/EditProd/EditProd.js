@@ -6,10 +6,12 @@ class EditProd extends React.Component {
     render() { 
         const products = this.props.products;
         const index = this.props.location.state.prodIndex;
+        let redirect = this.props.redirect;
+        if (redirect) return <Redirect to="/" />;
         return (
             <div>
                 <h1>Edit Product</h1>
-            
+                
                 <form onSubmit={(e) => this.props.handleEditFormSubmit(index, e)} >
             <label htmlFor="name">Product Name: </label>
             <input id="editname" type="text" name="name" placeholder={products[index].name} value={this.props.editName} onChange={this.props.handleInputChange} />

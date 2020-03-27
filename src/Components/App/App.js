@@ -10,6 +10,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+            redirect: false,
             name: "", 
             ean: "", 
             type: "", 
@@ -36,7 +37,8 @@ handleFormSubmit = (e) => {
       active: false,
   });
   this.setState({ products, 
-    name: "", ean: "", type: "", weight: "", color: "", active: false}
+    name: "", ean: "", type: "", weight: "", color: "", active: false},
+    () => {this.setState({redirect: true})}
   );
 }
 handleEditFormSubmit = (index, e) => {
@@ -52,10 +54,8 @@ handleEditFormSubmit = (index, e) => {
     weight: this.state.weight,
     color: this.state.color,
     active: false})
-  this.setState({ products, name: "", ean: "", type: "", weight: "", color: "", active: false},
-  () => {
-    this.props.history.push("/");
-  }
+  this.setState({ redirect: true, products, name: "", ean: "", type: "", weight: "", color: "", active: false}, 
+  () => this.setState({redirect: false})
   );
   }
 canBeSubmitted() {
