@@ -1,5 +1,6 @@
 import React from "react";
 import "./ProductList.css";
+import {Link} from "react-router-dom";
 
 class ProductList extends React.Component {
     render() { 
@@ -14,6 +15,7 @@ class ProductList extends React.Component {
                         <th>Type</th>
                         <th>Weight</th>
                         <th>Color</th>
+                        <th>Active</th>
                     </tr>
                     {products.map((product, index) => {
                         return (
@@ -23,8 +25,9 @@ class ProductList extends React.Component {
                                 <td>{product.type}</td>
                                 <td>{product.weight}</td>
                                 <td>{product.color}</td>
-                                <td><button>View</button></td>
-                                <td><button>Edit</button></td>
+                                <td><input type="checkbox" checked={product.active} onChange={(e) => this.props.setProductActive(product, e.target.checked)} /></td>
+                                <td><Link to={{ pathname: "/view", state: { prodIndex: index }}} ><button>View</button></Link></td>
+                                <td><Link to={{ pathname: "/edit", state: { prodIndex: index }}} ><button>Edit</button></Link></td>
                                 <td><button onClick={() => this.props.deleteProduct(index)}>Delete</button></td>
                             </tr>
                         )

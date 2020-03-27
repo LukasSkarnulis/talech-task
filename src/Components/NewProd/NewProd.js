@@ -4,6 +4,7 @@ class NewProd extends React.Component {
     render() {
         return (
             <div>
+                <h1>Create product</h1>
             <form onSubmit={this.props.handleFormSubmit}>
             <label htmlFor="name">Product Name: </label>
             <input id="name" type="text" name="name" value={this.props.newName} onChange={this.props.handleInputChange} />
