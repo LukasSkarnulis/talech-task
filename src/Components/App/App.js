@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './App.css';
 import ProductList from "../ProductList/ProductList";
 import NewProd from "../NewProd/NewProd";
@@ -24,7 +24,14 @@ class App extends React.Component {
             {name: "Cucumber", ean: "4444444444", type: "Vegetable", weight: "1kg", color: "Green", active: false}, ]
     };
 };
-
+componentDidMount() {
+  let localData = JSON.parse(localStorage.getItem("products"));
+  console.log(localData);
+  this.setState({products: localData})
+}
+setToLocalStorage() {
+  localStorage.setItem("products", JSON.stringify(this.state.products));
+}
 handleFormSubmit = (e) => {
   if (!this.canBeSubmitted()) {
     e.preventDefault();
@@ -78,7 +85,8 @@ handleInputChange = (e) => {
 
 deleteProduct = (delIndex) => {
   let products = [...this.state.products].filter((product, index) => index !== delIndex);
-  this.setState({ products });
+  this.setState({ products },
+    () => this.setToLocalStorage());
 };
 isActive = () => {
   this.setState({active: !this.state.active})
@@ -86,7 +94,7 @@ isActive = () => {
 setProductActive = (product, active) => {
   this.setState((state) => ({
     products: state.products.map(p => p.name === product.name ? { ...p, active } : p)
-  }))
+  }));
 }
 
 render() {
@@ -98,6 +106,7 @@ render() {
       setProductActive={this.setProductActive} />
       <Link to={{ pathname: "/create"}} ><button>Create</button></Link>
       <Route path="/create" render={(props) => <NewProd {...props} 
+      products = {this.state.products}
       redirect = {this.state.redirect}
       handleFormSubmit={this.handleFormSubmit}
       handleInputChange={this.handleInputChange}

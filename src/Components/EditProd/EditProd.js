@@ -3,6 +3,12 @@ import "./EditProd.css";
 import {Link, Redirect, withRouter} from "react-router-dom";
 
 class EditProd extends React.Component {
+    componentDidMount() {
+        localStorage.getItem("products");
+    }
+    componentWillUnmount() {
+        localStorage.setItem("products", JSON.stringify(this.props.products));
+      }
     render() { 
         const products = this.props.products;
         const index = this.props.location.state.prodIndex;
