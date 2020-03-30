@@ -1,0 +1,32 @@
+* {
+  margin: 0px;
+  padding: 0px
+}
+body,
+html,
+#root {
+  height: 100%;
+  font-size: 62.5%;
+  font-family: 'Roboto', sans-serif;
+  border: 0.1px solid rgba(213, 254, 255, 0.1);
+  background-color: rgba(213, 254, 255, 0.1)
+}
+.app {
+  width: 100%;
+}
+.create-button {
+  display: inline-block;
+  color:rgb(255, 255, 255);
+  background-color: rgb(41, 153, 26);
+  height: 5rem;
+  width: 5%;
+  font-size: 1.8rem;
+  letter-spacing: 0.2rem;
+  border-radius: 10%;
+  cursor: pointer;
+  margin-left:47.5%;
+  margin-right: 47.5%;
+}
+.create-button:hover {
+  background-color: rgb(6, 146, 146);
+}

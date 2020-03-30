@@ -1,0 +1,39 @@
+.editForm {
+    display: inline-flex;
+    flex-direction: column;
+    width: 40%;
+    margin: 1% 30% 0 30%;
+    font-size: 1.8rem;
+}
+.editButtons {
+    display: block;
+    margin: 0 auto 2% auto;
+}
+.edit-button {
+    display: inline-block;
+    color:rgb(255, 255, 255);
+    background-color: rgb(26, 28, 153);
+    height: 5rem;
+    width: 8rem;
+    font-size: 1.8rem;
+    letter-spacing: 0.2rem;
+    border-radius: 10%;
+    cursor: pointer;
+  }
+.edit-button:hover {
+    background-color: rgb(40, 53, 200);
+  }
+.close-edit-button {
+    display: inline-block;
+    color:rgb(255, 255, 255);
+    background-color: rgb(233, 64, 64);
+    height: 5rem;
+    width: 8rem;
+    font-size: 1.8rem;
+    letter-spacing: 0.2rem;
+    border-radius: 10%;
+    cursor: pointer;
+}
+.close-edit-button:hover {
+    background-color: rgb(198, 64, 64);
+}
