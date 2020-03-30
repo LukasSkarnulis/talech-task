@@ -1,6 +1,6 @@
 import React from "react";
 import "./EditProd.css";
-import {Link, Redirect, withRouter} from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
 
 class EditProd extends React.Component {
     componentDidMount() {
@@ -25,7 +25,7 @@ class EditProd extends React.Component {
             <input id="editcolor" type="text" name="color" placeholder={`Color: ${products[index].color}`} value={this.props.editColor} onChange={this.props.handleInputChange} />
             <div className="editButtons">
             <button className="edit-save-button" type="submit" value="Submit">Save</button>
-            <Link to={{ pathname: "/"}} ><button className="close-edit-button">Close</button></Link>
+            <Link to={{ pathname: "/talech-task"}} ><button className="close-edit-button">Close</button></Link>
             </div>
         </form>
             </div>

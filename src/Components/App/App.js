@@ -4,7 +4,7 @@ import ProductList from "../ProductList/ProductList";
 import NewProd from "../NewProd/NewProd";
 import ViewProd from "../ViewProd/ViewProd";
 import EditProd from "../EditProd/EditProd";
-import {BrowserRouter, Route, Redirect, Link} from "react-router-dom";
+import {BrowserRouter, Route} from "react-router-dom";
 import LowWidthList from '../LowWidthList/LowWidthList';
 
 class App extends React.Component {
@@ -120,7 +120,7 @@ render() {
       editType={this.state.type}
       editWeight={this.state.weight}
       editColor={this.state.color}
-  redirect={this.state.redirect} />} /> 
+      redirect={this.state.redirect} />} /> 
       <LowWidthList products={this.state.products}
       deleteProduct={this.deleteProduct} />
     </div>

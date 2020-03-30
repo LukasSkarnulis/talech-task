@@ -29,7 +29,7 @@ class ProductList extends React.Component {
                                 <label for={index} /></td>
                                 <td className="text-center"><Link to={{ pathname: "/view", state: { prodIndex: index }}} ><button className="view-button">View</button></Link></td>
                                 <td className="text-center"><Link to={{ pathname: "/edit", state: { prodIndex: index }}} ><button className="edit-button">Edit</button></Link></td>
-                                <td className="text-center"><Link to={{ pathname: "/"}} ><button className="delete-button" onClick={() => this.props.deleteProduct(index)}>Delete</button></Link></td>
+                                <td className="text-center"><Link to={{ pathname: "/talech-task"}} ><button className="delete-button" onClick={() => this.props.deleteProduct(index)}>Delete</button></Link></td>
                             </tr>
                         )
                     })}
