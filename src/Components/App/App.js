@@ -88,9 +88,6 @@ deleteProduct = (delIndex) => {
   this.setState({ products },
     () => this.setToLocalStorage());
 };
-isActive = () => {
-  this.setState({active: !this.state.active})
-}
 setProductActive = (product, active) => {
   this.setState((state) => ({
     products: state.products.map(p => p.name === product.name ? { ...p, active } : p)
@@ -104,7 +101,6 @@ render() {
       <ProductList products={this.state.products} 
       deleteProduct={this.deleteProduct}
       setProductActive={this.setProductActive} />
-      <Link to={{ pathname: "/create"}} ><button>Create</button></Link>
       <Route path="/create" render={(props) => <NewProd {...props} 
       products = {this.state.products}
       redirect = {this.state.redirect}
@@ -116,6 +112,7 @@ render() {
       newWeight={this.state.weight}
       newColor={this.state.color} />} />
       <Route path="/view" render={(props) => <ViewProd {...props} products={this.state.products} />} />
+      <Link to={{ pathname: "/create"}} ><button className="create-button">Create</button></Link>
       <Route path="/edit" render={(props) => <EditProd {...props} products={this.state.products} 
       handleInputChange={this.handleInputChange}
       handleEditFormSubmit={this.handleEditFormSubmit}

@@ -25,11 +25,11 @@ class ProductList extends React.Component {
                                 <td className="text-right">{product.weight}</td>
                                 <td className="text-right">{product.color}</td>
                                 <td className="text-center">
-                                <input type="checkbox" id="check" className="checkmark" checked={product.active} onChange={(e) => this.props.setProductActive(product, e.target.checked)} />
-                                <label for="check" /></td>
-                                <td className="text-center"><Link to={{ pathname: "/view", state: { prodIndex: index }}} ><button>View</button></Link></td>
-                                <td className="text-center"><Link to={{ pathname: "/edit", state: { prodIndex: index }}} ><button>Edit</button></Link></td>
-                                <td className="text-center"><button onClick={() => this.props.deleteProduct(index)}>Delete</button></td>
+                                <input type="checkbox" id={index} className="checkmark" checked={product.active} onChange={(e) => this.props.setProductActive(product, e.target.checked)} />
+                                <label for={index} /></td>
+                                <td className="text-center"><Link to={{ pathname: "/view", state: { prodIndex: index }}} ><button className="view-button">View</button></Link></td>
+                                <td className="text-center"><Link to={{ pathname: "/edit", state: { prodIndex: index }}} ><button className="edit-button">Edit</button></Link></td>
+                                <td className="text-center"><Link to={{ pathname: "/"}} ><button className="delete-button" onClick={() => this.props.deleteProduct(index)}>Delete</button></Link></td>
                             </tr>
                         )
                     })}

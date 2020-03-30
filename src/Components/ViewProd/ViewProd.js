@@ -7,16 +7,17 @@ class ViewProd extends React.Component {
         const products = this.props.products;
         const index = this.props.location.state.prodIndex;
         return (
-            <div>
-                <h1>View Product</h1>
+            <div className="viewProd">
                 <ul>
-                    <li>{`Name: ${products[index].name}`}</li>
-                    <li>{`EAN Code: ${products[index].ean}`}</li>
-                    <li>{`Type: ${products[index].type}`}</li>
-                    <li>{`Weight: ${products[index].weight}`}</li>
-                    <li>{`Color: ${products[index].color}`}</li>
-                    <li>{`Active: ${products[index].active}`}</li>
-                    <td><Link to={{ pathname: "/"}} ><button>Close</button></Link></td>
+                    <li><span className="bold">Name:</span> {products[index].name}</li>
+                    <li><span className="bold">EAN Code:</span> {products[index].ean}</li>
+                    <li><span className="bold">Type:</span> {products[index].type}</li>
+                    <li><span className="bold">Weight:</span> {products[index].weight}</li>
+                    <li><span className="bold">Color:</span> {products[index].color}</li>
+                    <li className="capitalize"><span className="bold">Active:</span> {String(products[index].active)}</li>
+                    <div className="viewbutt">
+                    <td><Link to={{ pathname: "/"}} ><button className="viewclose-button">Close</button></Link></td>
+                    </div>
                 </ul>
             </div>
         )

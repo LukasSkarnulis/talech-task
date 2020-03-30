@@ -1,5 +1,6 @@
 import React from "react";
 import {Link, Redirect} from "react-router-dom";
+import "../NewProd/NewProd.css"
 
 class NewProd extends React.Component {
     componentWillUnmount() {
@@ -9,21 +10,17 @@ class NewProd extends React.Component {
         const redirect = this.props.redirect;
         if (redirect) return <Redirect to="/" />
         return (
-            <div>
-                <h1>Create product</h1>
-            <form onSubmit={this.props.handleFormSubmit}>
-            <label htmlFor="name">Product Name: </label>
-            <input id="name" type="text" name="name" value={this.props.newName} onChange={this.props.handleInputChange} />
-            <label htmlFor="ean">EAN Code: </label>
-            <input id="ean" type="text" name="ean" value={this.props.newEan} onChange={this.props.handleInputChange} />
-            <label htmlFor="type">Product Type: </label>
-            <input id="type" type="text" name="type" value={this.props.newType} onChange={this.props.handleInputChange} />
-            <label htmlFor="weight">Product Weight: </label>
-            <input id="weight" type="text" name="weight" value={this.props.newWeight} onChange={this.props.handleInputChange} />
-            <label htmlFor="color">Product Color: </label>
-            <input id="color" type="text" name="color" value={this.props.newColor} onChange={this.props.handleInputChange} />
-            <button type="submit" value="Submit">Add New Product</button>
-            <Link to={{ pathname: "/"}} ><button>Close</button></Link>
+            <div className="createProd">
+            <form className="createForm" onSubmit={this.props.handleFormSubmit}>
+            <input id="name" type="text" name="name" placeholder="Product Name:" value={this.props.newName} onChange={this.props.handleInputChange} />
+            <input id="ean" type="text" name="ean" placeholder="EAN Code:" value={this.props.newEan} onChange={this.props.handleInputChange} />
+            <input id="type" type="text" name="type" placeholder="Product Type:" value={this.props.newType} onChange={this.props.handleInputChange} />
+            <input id="weight" type="text" name="weight" placeholder="Product Weight:" value={this.props.newWeight} onChange={this.props.handleInputChange} />
+            <input id="color" type="text" name="color" placeholder="Product Color:" value={this.props.newColor} onChange={this.props.handleInputChange} />
+            <div className="createButtons">
+            <button type="submit" value="Submit" className="new-button">Add</button>
+            <Link to={{ pathname: "/"}} ><button className="close-button">Close</button></Link>
+            </div>
         </form>
         </div>
         )
