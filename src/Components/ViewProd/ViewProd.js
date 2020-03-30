@@ -16,7 +16,7 @@ class ViewProd extends React.Component {
                     <li><span className="bold">Color:</span> {products[index].color}</li>
                     <li className="capitalize"><span className="bold">Active:</span> {String(products[index].active)}</li>
                     <div className="viewbutt">
-                    <td><Link to={{ pathname: "/talech-task/"}} ><button className="viewclose-button">Close</button></Link></td>
+                    <td><Link to={{ pathname: "/talech-task"}} ><button className="viewclose-button">Close</button></Link></td>
                     </div>
                 </ul>
             </div>
