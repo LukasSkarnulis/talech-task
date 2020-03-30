@@ -19,7 +19,7 @@ class LowWidthList extends React.Component {
                     <div className="low-buttons">
                     <li><Link to={{ pathname: "/create"}} ><button className="create-button" onClick={() => window.scrollTo(0, 0)}>Create</button></Link></li>
                     <li className="text-center"><Link to={{ pathname: "/edit", state: { prodIndex: index }}} ><button className="edit-button">Edit</button></Link></li>
-                    <li className="text-center"><Link to={{ pathname: "/talech-task"}} ><button className="delete-button" onClick={() => this.props.deleteProduct(index)}>Delete</button></Link></li> 
+                    <li className="text-center"><Link to={{ pathname: "/talech-task/"}} ><button className="delete-button" onClick={() => this.props.deleteProduct(index)}>Delete</button></Link></li> 
                     </div>      
                 </ul>
                 )
