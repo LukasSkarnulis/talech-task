@@ -6,9 +6,9 @@ class NewProd extends React.Component {
     componentDidMount() {
         window.scrollTo(0, 0);
     }
-    componentWillUnmount() {
+    /*componentWillUnmount() {
         localStorage.setItem("products", JSON.stringify(this.props.products));
-      }
+      }*/
     render() {
         const redirect = this.props.redirect;
         if (redirect) return <Redirect to="/" />

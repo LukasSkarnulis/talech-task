@@ -5,11 +5,11 @@ import {Link, Redirect} from "react-router-dom";
 class EditProd extends React.Component {
     componentDidMount() {
         window.scrollTo(0, 0);
-        localStorage.getItem("products");
+        /*localStorage.getItem("products");*/
     }
-    componentWillUnmount() {
+    /*componentWillUnmount() {
         localStorage.setItem("products", JSON.stringify(this.props.products));
-      }
+      }*/
     render() { 
         const products = this.props.products;
         const index = this.props.location.state.prodIndex;

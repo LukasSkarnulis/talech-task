@@ -25,14 +25,14 @@ class App extends React.Component {
             {name: "Cucumber", ean: "4444444444", type: "Vegetable", weight: "1kg", color: "Green", active: false}, ]
     };
 };
-componentDidMount() {
+/*componentDidMount() {
   let localData = JSON.parse(localStorage.getItem("products"));
   console.log(localData);
   this.setState({products: localData})
 }
 setToLocalStorage() {
   localStorage.setItem("products", JSON.stringify(this.state.products));
-}
+}*/
 handleFormSubmit = (e) => {
   if (!this.canBeSubmitted()) {
     e.preventDefault();
@@ -85,8 +85,8 @@ handleInputChange = (e) => {
   };
 deleteProduct = (delIndex) => {
   let products = [...this.state.products].filter((product, index) => index !== delIndex);
-  this.setState({ products },
-    () => this.setToLocalStorage());
+  this.setState({ products }/*,
+    () => this.setToLocalStorage()*/);
 };
 setProductActive = (product, active) => {
   this.setState((state) => ({
