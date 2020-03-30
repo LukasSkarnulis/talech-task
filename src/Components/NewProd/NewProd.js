@@ -3,6 +3,9 @@ import {Link, Redirect} from "react-router-dom";
 import "../NewProd/NewProd.css"
 
 class NewProd extends React.Component {
+    componentDidMount() {
+        window.scrollTo(0, 0);
+    }
     componentWillUnmount() {
         localStorage.setItem("products", JSON.stringify(this.props.products));
       }

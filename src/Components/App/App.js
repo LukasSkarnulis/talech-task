@@ -5,6 +5,7 @@ import NewProd from "../NewProd/NewProd";
 import ViewProd from "../ViewProd/ViewProd";
 import EditProd from "../EditProd/EditProd";
 import {BrowserRouter, Route, Redirect, Link} from "react-router-dom";
+import LowWidthList from '../LowWidthList/LowWidthList';
 
 class App extends React.Component {
   constructor(props) {
@@ -82,7 +83,6 @@ handleInputChange = (e) => {
     this.setState({...this.state,
     [e.target.name]: e.target.value})
   };
-
 deleteProduct = (delIndex) => {
   let products = [...this.state.products].filter((product, index) => index !== delIndex);
   this.setState({ products },
@@ -112,7 +112,6 @@ render() {
       newWeight={this.state.weight}
       newColor={this.state.color} />} />
       <Route path="/view" render={(props) => <ViewProd {...props} products={this.state.products} />} />
-      <Link to={{ pathname: "/create"}} ><button className="create-button">Create</button></Link>
       <Route path="/edit" render={(props) => <EditProd {...props} products={this.state.products} 
       handleInputChange={this.handleInputChange}
       handleEditFormSubmit={this.handleEditFormSubmit}
@@ -122,6 +121,8 @@ render() {
       editWeight={this.state.weight}
       editColor={this.state.color}
   redirect={this.state.redirect} />} /> 
+      <LowWidthList products={this.state.products}
+      deleteProduct={this.deleteProduct} />
     </div>
     </BrowserRouter>
   );

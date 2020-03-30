@@ -4,6 +4,7 @@ import {Link, Redirect, withRouter} from "react-router-dom";
 
 class EditProd extends React.Component {
     componentDidMount() {
+        window.scrollTo(0, 0);
         localStorage.getItem("products");
     }
     componentWillUnmount() {
@@ -23,7 +24,7 @@ class EditProd extends React.Component {
             <input id="editweight" type="text" name="weight" placeholder={`Weight: ${products[index].weight}`} value={this.props.editWeight} onChange={this.props.handleInputChange} />
             <input id="editcolor" type="text" name="color" placeholder={`Color: ${products[index].color}`} value={this.props.editColor} onChange={this.props.handleInputChange} />
             <div className="editButtons">
-            <button className="edit-button" type="submit" value="Submit">Save</button>
+            <button className="edit-save-button" type="submit" value="Submit">Save</button>
             <Link to={{ pathname: "/"}} ><button className="close-edit-button">Close</button></Link>
             </div>
         </form>

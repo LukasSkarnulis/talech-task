@@ -34,6 +34,9 @@ class ProductList extends React.Component {
                         )
                     })}
                 </table>
+                <div className="create-box">
+                 <Link to={{ pathname: "/create"}} ><button className="create-button">Create</button></Link>
+                 </div>
             </div>
         )
     }

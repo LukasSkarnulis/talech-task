@@ -2,17 +2,17 @@
     display: inline-flex;
     flex-direction: column;
     width: 40%;
-    margin: 1% 30% 0 30%;
+    margin: 0 30% 0 30%;
     font-size: 1.8rem;
 }
 .editButtons {
     display: block;
     margin: 0 auto 2% auto;
 }
-.edit-button {
+.edit-save-button {
     display: inline-block;
     color:rgb(255, 255, 255);
-    background-color: rgb(26, 28, 153);
+    background-color: rgb(41, 153, 26);
     height: 5rem;
     width: 8rem;
     font-size: 1.8rem;
@@ -20,8 +20,8 @@
     border-radius: 10%;
     cursor: pointer;
   }
-.edit-button:hover {
-    background-color: rgb(40, 53, 200);
+.edit-save-button:hover {
+    background-color: rgb(6, 146, 146);
   }
 .close-edit-button {
     display: inline-block;
@@ -36,4 +36,24 @@
 }
 .close-edit-button:hover {
     background-color: rgb(198, 64, 64);
+}
+@media only screen and (max-width: 650px) {
+    .editForm {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .editButtons {
+        display: inline-flex;
+        margin: 0 auto;
+    }
+    .edit-save-button {
+        height: 4rem;
+        width: 5rem;
+        font-size: 1.2rem;
+    }
+    .close-edit-button {
+        height: 4rem;
+        width: 5rem;
+        font-size: 1.2rem;
+    }
 }
