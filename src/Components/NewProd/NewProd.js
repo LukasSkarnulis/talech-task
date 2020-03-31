@@ -22,7 +22,7 @@ class NewProd extends React.Component {
             <input id="color" type="text" name="color" placeholder="Product Color:" value={this.props.newColor} onChange={this.props.handleInputChange} />
             <div className="createButtons">
             <button type="submit" value="Submit" className="new-button">Add</button>
-            <Link to={{ pathname: "/talech-task"}} ><button className="close-button">Close</button></Link>
+            <Link to={{ pathname: "/"}} ><button className="close-button">Close</button></Link>
             </div>
         </form>
         </div>
