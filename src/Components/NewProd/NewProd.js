@@ -6,9 +6,9 @@ class NewProd extends React.Component {
     componentDidMount() {
         window.scrollTo(0, 0);
     }
-    /*componentWillUnmount() {
+    componentWillUnmount() {
         localStorage.setItem("products", JSON.stringify(this.props.products));
-      }*/
+      }
     render() {
         const redirect = this.props.redirect;
         if (redirect) return <Redirect to="/" />
@@ -22,7 +22,7 @@ class NewProd extends React.Component {
             <input id="color" type="text" name="color" placeholder="Product Color:" value={this.props.newColor} onChange={this.props.handleInputChange} />
             <div className="createButtons">
             <button type="submit" value="Submit" className="new-button">Add</button>
-            <Link to={{ pathname: "/talech-task"}} ><button className="close-button">Close</button></Link>
+            <Link to={{ pathname: "/"}} ><button className="close-button">Close</button></Link>
             </div>
         </form>
         </div>

@@ -5,11 +5,11 @@ import {Link, Redirect} from "react-router-dom";
 class EditProd extends React.Component {
     componentDidMount() {
         window.scrollTo(0, 0);
-        /*localStorage.getItem("products");*/
+        localStorage.getItem("products");
     }
-    /*componentWillUnmount() {
+    componentWillUnmount() {
         localStorage.setItem("products", JSON.stringify(this.props.products));
-      }*/
+      }
     render() { 
         const products = this.props.products;
         const index = this.props.location.state.prodIndex;
@@ -25,7 +25,7 @@ class EditProd extends React.Component {
             <input id="editcolor" type="text" name="color" placeholder={`Color: ${products[index].color}`} value={this.props.editColor} onChange={this.props.handleInputChange} />
             <div className="editButtons">
             <button className="edit-save-button" type="submit" value="Submit">Save</button>
-            <Link to={{ pathname: "/talech-task"}} ><button className="close-edit-button">Close</button></Link>
+            <Link to={{ pathname: "/"}} ><button className="close-edit-button">Close</button></Link>
             </div>
         </form>
             </div>
