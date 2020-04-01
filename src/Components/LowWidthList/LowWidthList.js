@@ -15,6 +15,8 @@ class LowWidthList extends React.Component {
                     <li><span className="bold">Type:</span> {product.type}</li>
                     <li><span className="bold">Weight:</span> {product.weight}</li>
                     <li><span className="bold">Color:</span> {product.color}</li>
+                    <li><span className="bold">Quantity:</span> {product.quantity}</li>
+                    <li><span className="bold">Price:</span> {product.price}</li>
                     <li className="capitalize"><span className="bold">Active:</span> {String(product.active)}</li>
                     <div className="low-buttons">
                     <li><Link to={{ pathname: "/create"}} ><button className="create-button" onClick={() => window.scrollTo(0, 0)}>Create</button></Link></li>

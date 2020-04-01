@@ -23,6 +23,8 @@ class EditProd extends React.Component {
             <input id="edittype" type="text" name="type" placeholder={`Type: ${products[index].type}`} value={this.props.editType} onChange={this.props.handleInputChange} />
             <input id="editweight" type="text" name="weight" placeholder={`Weight: ${products[index].weight}`} value={this.props.editWeight} onChange={this.props.handleInputChange} />
             <input id="editcolor" type="text" name="color" placeholder={`Color: ${products[index].color}`} value={this.props.editColor} onChange={this.props.handleInputChange} />
+            <input id="editquantity" type="text" name="quantity" placeholder={`Quantity: ${products[index].quantity}`} value={this.props.editQuantity} onChange={this.props.handleInputChange} />
+            <input id="editprice" type="text" name="price" placeholder={`Color: ${products[index].price}`} value={this.props.editPrice} onChange={this.props.handleInputChange} />
             <div className="editButtons">
             <button className="edit-save-button" type="submit" value="Submit">Save</button>
             <Link to={{ pathname: "/"}} ><button className="close-edit-button">Close</button></Link>

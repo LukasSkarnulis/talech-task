@@ -1,0 +1,19 @@
+.tab-list {
+  height: 2.6rem;
+    border-bottom: 2px solid lightblue;
+    text-align: center;
+}
+.tab-list-item {
+    display: inline-block;
+    list-style: none;
+    width: 20rem;
+    cursor: pointer;
+    font-size: 2rem;
+    border-top-left-radius: 5%;
+    border-top-right-radius: 5%;
+}
+.tab-list-active {
+    background-color: white;
+    border: solid lightblue;
+    border-width: 2px 2px 0 2px;
+}
